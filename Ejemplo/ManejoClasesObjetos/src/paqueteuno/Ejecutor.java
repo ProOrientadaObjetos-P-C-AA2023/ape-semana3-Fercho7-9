@@ -13,15 +13,20 @@ public class Ejecutor {
     public static void main(String[] args) {
         // Crear un objeto de tipo FacturaTelefono
         FacturaTelefono ft = new FacturaTelefono();
+        FacturaTelefono ft2 = new FacturaTelefono("+565 09384 75 05",301.0,0.40);
         // Valores de entrada
+
         String numeroTelefono = "098321321";
         double minutos = 230;
         double valorMinuto = 0.25;
+
         // uso de los métodos establecer para darle valores a los 
         // atributos del objeto.
+
         ft.establecerNumeroTelefono(numeroTelefono);
         ft.establecerMinutosMes(minutos);
         ft.establecerValorMinuto(valorMinuto);
+
         // hasta aquí el objeto ya tiene valores para sus atributos:
         // número de telefono, número de minutos consumidos en el mes, 
         // valor de cada minuto.
@@ -31,13 +36,16 @@ public class Ejecutor {
         // objeto.
         
         ft.calcularValorFactura();
-        
+        ft2.calcularValorFactura();
         // Se hace uso de los métodos obtener para presentar en pantalla lo 
         // requerido
+
         System.out.printf("Factura de Teléfono\n\nNúmero de teléfono: %s\n"
                 + "Minutos mensuales: %.2f\nValor por minuto: %.2f\n"
-                + "Valor a cancelar: %.2f\n", ft.obtenerNumeroTelefono(),
-                ft.obtenerMinutosMes(), ft.obtenerValorMinuto(),
-                ft.obtenerValorFactura());
+                + "Valor a cancelar: %.2f\n", ft2.obtenerNumeroTelefono(),
+                ft2.obtenerMinutosMes(), ft2.obtenerValorMinuto(),
+                ft2.obtenerValorFactura());
+
+        System.out.print(ft2);
     }
 }
